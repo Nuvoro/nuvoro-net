@@ -1,0 +1,97 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #333; /* Dark background for navbar */
+    padding: 1rem 2rem;
+}
+
+.navbar-brand {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: #ffffff !important; /* White text for nav links */
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.navbar-text {
+    color: #ffffff; /* White text for admin name */
+    font-weight: 600;
+    margin-right: 15px;
+}
+
+.container {
+    padding-top: 30px;
+}
+
+.list-group-item {
+    border: none;
+    border-radius: 0;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.list-group-item.active {
+    background-color: #6c5ce7;
+    border-color: #6c5ce7;
+    color: #ffffff;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #6c5ce7;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+.service-item {
+    margin-bottom: 20px;
+}
+
+#services-list .service-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+#service-form {
+    margin-top: 20px;
+}
+
+#service-form .form-group {
+    margin-bottom: 15px;
+}

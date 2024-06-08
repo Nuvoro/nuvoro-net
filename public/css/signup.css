@@ -1,0 +1,116 @@
+/* Import the Lato font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #000000; /* White navbar for a clean look */
+    padding: 1rem 2rem; /* Add some padding for better spacing */
+}
+
+.navbar-brand {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.5rem; /* Increase the font size for better visibility */
+}
+
+.nav-link {
+    color: #000000 !important; /* Update to match the provided CSS */
+    font-weight: 400; /* Regular weight for nav links */
+    font-size: 1rem;
+}
+
+.nav-link:hover {
+    color: #1a73e8 !important; /* Softer highlight color on hover */
+}
+
+.nav-btn {
+    background-color: #000000; /* Modern green color for the button */
+    border-color: #000000;
+    color: rgb(255, 255, 255);
+    border-radius: 10px; /* Adjusted border-radius for a more square look */
+    padding: 8px 16px;
+    margin-left: 15px;
+    font-size: 1rem;
+}
+
+.nav-btn:hover {
+    background-color: #000000; /* Slightly darker on hover */
+    border-color: #000000;
+}
+
+.container {
+    padding-top: 30px;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-outline-primary {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #000000; /* Thinner border */
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-primary img {
+    height: 24px;
+    margin-right: 10px;
+}
+
+.btn-outline-primary i {
+    margin-right: 10px;
+    color: #000000;
+}
+
+.btn-outline-primary:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000; /* Thinner border */
+}
+
+#emailSignupForm {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+.form-text {
+    text-align: center;
+}
+
+a {
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Nuvoro</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Nuvoro</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <span class="navbar-text" id="user-name">Hello, </span> <!-- This will be dynamically updated -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="logout()">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
+                    <a href="#" class="list-group-item list-group-item-action">Appointments</a>
+                    <a href="#" class="list-group-item list-group-item-action">Clients</a>
+                    <a href="services.html" class="list-group-item list-group-item-action">Services</a>
+                    <a href="#" class="list-group-item list-group-item-action">Settings</a>
+                </div>
+            </div>
+            <div class="col-md-9 main-content">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Dashboard
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Welcome to the Admin Dashboard</h5>
+                        <p class="card-text">Manage your appointments, clients, and services here.</p>
+                        <!-- Add your admin dashboard content here -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                Upcoming Appointments
+                            </div>
+                            <div class="card-body">
+                                <!-- Add your appointments widget here -->
+                                <p>No upcoming appointments.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                Latest Clients
+                            </div>
+                            <div class="card-body">
+                                <!-- Add your clients widget here -->
+                                <p>No new clients.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Services Overview
+                    </div>
+                    <div class="card-body">
+                        <!-- Add your services widget here -->
+                        <p>No services added yet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js" defer></script>
+</body>
+</html>

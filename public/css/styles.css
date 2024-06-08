@@ -1,0 +1,100 @@
+/* Import the Lato font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; /* Light background for the overall page */
+}
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* White navbar for a clean look */
+    padding: 1rem 2rem; /* Add some padding for better spacing */
+}
+
+.navbar-brand {
+    color: #2d2d2d;
+    font-weight: 700;
+    font-size: 1.5rem; /* Increase the font size for better visibility */
+}
+
+.nav-link {
+    color: #2d2d2d !important;
+    font-weight: 400; /* Regular weight for nav links */
+}
+
+.nav-link:hover {
+    color: #1a73e8 !important; /* Softer highlight color on hover */
+}
+
+.hero-section {
+    background-color: #1a73e8; /* Softer blue color for the hero section */
+    color: white;
+    padding: 20vh 20px 10vh; /* Adjust padding to move content higher */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh; /* Fill the entire viewport height */
+}
+
+.hero-section h1 {
+    font-size: 2.5rem; /* Adjusted font size for the main heading */
+    margin-bottom: 20px;
+    font-weight: 700; /* Bold font for emphasis */
+}
+
+.hero-section p {
+    font-size: 1rem;
+    margin-bottom: 20px; /* Reduced margin-bottom */
+}
+
+.hero-section .btn-primary {
+    background-color: #4CAF50; /* Softer green for a striking contrast */
+    border-color: #4CAF50;
+    padding: 10px 20px; /* Adjusted padding for a more proportionate button */
+    font-size: 1rem;
+    border-radius: 20px; /* Rounded button for a modern look */
+    margin-bottom: 10px; /* Add margin-bottom to separate from small text */
+}
+
+.hero-section small {
+    margin-top: 10px;
+    display: block;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f7f7f7;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.btn-outline-primary {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+.btn-block {
+    border-radius: 5px;
+}

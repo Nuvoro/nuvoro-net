@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuvoro</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Nuvoro</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-primary nav-btn" href="signup.html">Start Free Trial</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Revolutionize Your Scheduling</h1>
+            <p class="hero-subtitle">Seamless scheduling for Canadian Businesses</p>
+            <button class="btn btn-primary" onclick="window.location.href='signup.html'">Start free trial</button>
+            <small>No credit card required</small>
+        </div>
+        <!-- Cards Section -->
+        <section class="cards-section py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i class="fas fa-user-plus fa-3x"></i>
+                                <h5 class="card-title mt-3">Onboarding</h5>
+                                <p class="card-text">Effortless onboarding process for new employees.</p>
+                                <a href="#" class="btn btn-outline-primary">Explore Onboarding</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i class="fas fa-info-circle fa-3x"></i>
+                                <h5 class="card-title mt-3">About Us</h5>
+                                <p class="card-text">Learn more about Nuvoro and our mission.</p>
+                                <a href="#" class="btn btn-outline-primary">Explore About Us</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i class="fas fa-lightbulb fa-3x"></i>
+                                <h5 class="card-title mt-3">Vision</h5>
+                                <p class="card-text">Our vision for the future of scheduling.</p>
+                                <a href="#" class="btn btn-outline-primary">Explore Vision</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Sign-Up Section -->
+    <div id="sign-up-section" class="sign-up-section">
+        <!-- Sign-Up Form will be dynamically inserted here -->
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Firebase Configuration
+        var firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        function showSignUp() {
+            document.getElementById('sign-up-section').innerHTML = `
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <h2>Create Your Account</h2>
+                            <button class="btn btn-outline-primary" onclick="googleSignUp()">Sign up with Google</button>
+                            <button class="btn btn-outline-primary" onclick="showEmailSignUp()">Continue with Email</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function googleSignUp() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(provider).then(function(result) {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                var token = result.credential.accessToken;
+                // The signed-in user info.
+                var user = result.user;
+                console.log(user);
+            }).catch(function(error) {
+                console.log(error);
+            });
+        }
+
+        function showEmailSignUp() {
+            document.getElementById('sign-up-section').innerHTML = `
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <h2>Create Your Account</h2>
+                            <form onsubmit="emailSignUp(event)">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Continue</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function emailSignUp(event) {
+            event.preventDefault();
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    var user = userCredential.user;
+                    console.log(user);
+                })
+                .catch((error) => {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    console.log(errorCode, errorMessage);
+                });
+        }
+    </script>
+</body>
+</html>

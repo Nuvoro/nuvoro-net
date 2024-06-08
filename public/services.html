@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Services</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/services.js" defer></script>
+    <style>
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .service-item h5 {
+            margin: 0;
+        }
+
+        .service-item p {
+            margin: 0;
+        }
+
+        .service-item .actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .service-item .actions .btn {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Nuvoro</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <span class="navbar-text" id="user-name">Hello, </span> <!-- This will be dynamically updated -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="logout()">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <div class="list-group">
+                    <a href="admin.html" class="list-group-item list-group-item-action">Dashboard</a>
+                    <a href="#" class="list-group-item list-group-item-action">Appointments</a>
+                    <a href="#" class="list-group-item list-group-item-action">Clients</a>
+                    <a href="services.html" class="list-group-item list-group-item-action active">Services</a>
+                    <a href="#" class="list-group-item list-group-item-action">Settings</a>
+                </div>
+            </div>
+            <div class="col-md-9 main-content">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Add Service
+                    </div>
+                    <div class="card-body">
+                        <form id="service-form">
+                            <div class="form-group">
+                                <label for="serviceName">Service Name</label>
+                                <input type="text" class="form-control" id="serviceName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="serviceDescription">Service Description</label>
+                                <textarea class="form-control" id="serviceDescription" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="serviceCost">Service Cost</label>
+                                <input type="number" class="form-control" id="serviceCost" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add Service</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Services
+                    </div>
+                    <div class="card-body">
+                        <div id="services-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
